@@ -15,7 +15,9 @@ function convertToObject(sourceString) {
   lines.forEach((line) => {
     const [key, value] = line.split(':');
 
-    styles[key.trim()] = value.trim();
+    if (key && value) {
+      styles[key.trim()] = value.trim();
+    }
   });
 
   return styles;
